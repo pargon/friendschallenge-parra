@@ -28,8 +28,29 @@
     background-size: auto 100%;
 }
 
+.card__h1 {
+    transform:scaleY(1);
+}
+
+.card__h1:hover {
+    transform:scaleY(1.1);
+}
+
 header h1 {
     font-size: 1.3rem;
+    animation-duration: 6s;
+    animation-name: aparecer;
+    animation-iteration-count: initial;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .card__h1 {
@@ -83,6 +104,35 @@ footer .secFooter__item .iframe__howto {
     background-color: #f1f1f1;
 }
 
+.nav__bar__link {
+    animation: move 3s;
+    -webkit-animation: move 3s;
+}
+
+@keyframes move {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes move {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
 .nav__bar__link:link,
 .nav__bar__link:visited {
     background-color: gainsboro;
@@ -98,6 +148,7 @@ footer .secFooter__item .iframe__howto {
 .nav__bar__link:hover {
     background-color: #4286f4;
     color: white;
+    transition: all 1s;
 }
 
 .nav__user .imgUser {
@@ -108,6 +159,11 @@ footer .secFooter__item .iframe__howto {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    transform: scale(1);
+}
+
+.imgUser:hover {
+    transform: scale(1.1);
 }
 
 .nav__user {
@@ -309,7 +365,7 @@ td {
     }
 
     .nav__user {
-        align-content:flex-end;        
+        align-content: flex-end;
     }
 
     .card__h1 {
