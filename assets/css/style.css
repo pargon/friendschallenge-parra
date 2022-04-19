@@ -1,7 +1,7 @@
 /* 
  ------- General --------
   */
-  * {
+* {
     font-family: "Open Sans", sans-serif;
     color: #444444;
     padding: 0;
@@ -81,6 +81,11 @@ header .fixed-top {
     position: relative;
 }
 
+.navbar>ul>li {
+    white-space: nowrap;
+    padding: 10px 0 10px 28px;
+}
+
 .navbar a,
 .navbar a:focus {
     display: flex;
@@ -94,6 +99,14 @@ header .fixed-top {
     transition: 0.3s;
     position: relative;
 }
+
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
 
 .navbar>ul>li>a:before {
     content: "";
@@ -120,6 +133,16 @@ header .fixed-top {
 .navbar .active:focus,
 .navbar li:hover>a {
     color: #106eea;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
 }
 
 /* 
@@ -157,29 +180,6 @@ header .fixed-top {
 
 .welcome h1 span {
     color: #106eea;
-}
-
-
-
-.card__nextchallenge {
-    height: 10rem;
-    width: 100%;
-    background-image: url(../img/nextchallenge.png);
-    background-size: auto 100%;
-}
-
-.card__teamchallenges {
-    height: 10rem;
-    width: 100%;
-    background-image: url(../img/teamchallenges.png);
-    background-size: auto 100%;
-}
-
-.card__challengesmet {
-    height: 10rem;
-    width: 100%;
-    background-image: url(../img/challengesmet.png);
-    background-size: auto 100%;
 }
 
 /* 
@@ -251,6 +251,82 @@ header .fixed-top {
 }
 
 /* 
+ ------- Contact --------
+  */
+.contact .info-box {
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.3);
+    padding: 20px 0 30px 0;
+  }
+  .contact .info-box i {
+    font-size: 32px;
+    color: #106eea;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #b3d1fa;
+  }
+  .contact .info-box h3 {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  .contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .contact .email-form {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
+    padding: 30px;
+  }
+  .contact .email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .contact .email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .contact .email-form .form-group {
+    margin-bottom: 20px;
+  }
+  .contact .email-form input, .contact .email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .contact .email-form input:focus, .contact .email-form textarea:focus {
+    border-color: #106eea;
+  }
+  .contact .email-form input {
+    padding: 10px 15px;
+  }
+  .contact .email-form textarea {
+    padding: 12px 15px;
+  }
+  .contact .email-form button[type=submit] {
+    background: #106eea;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  .contact .email-form button[type=submit]:hover {
+    background: #3b8af2;
+  }
+/* 
 -----------  Main -------------
 */
 main section {
@@ -263,7 +339,6 @@ main section {
 }
 
 main {
-    /* background: linear-gradient(to right, #0083B0, #00B4DB); */
     grid-area: content;
     color: #FFFFFF;
     height: auto;
@@ -307,7 +382,7 @@ footer {
 
 #gridNextChallenge {
     display: grid;
-    grid-template-columns: auto 3rem;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
         "header navuser"
@@ -318,13 +393,12 @@ footer {
 
 #gridContact {
     display: grid;
-    grid-template-columns: auto 3rem;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-        "header navuser"
-        "content content"
-        "nav nav"
-        "footer footer";
+        "header"
+        "content"
+        "footer";
 }
 
 #gridTeamChallenges {
@@ -336,16 +410,6 @@ footer {
         "content content"
         "nav nav"
         "footer footer";
-}
-
-
-.card__h1 {
-    color: #FFFFFF;
-    font-size: 1rem;
-}
-
-.card__description {
-    color: #FFFFFF;
 }
 
 .button {
@@ -363,75 +427,6 @@ footer {
 }
 
 @media screen and (min-width: 400px) {
-
-    #gridIndex {
-        display: grid;
-        /* margin-left: 8%;
-        margin-right: 8%; */
-        grid-template-columns: auto 3rem;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "header navuser"
-            "content content"
-            "footer footer";
-    }
-
-    #gridIndex .secMain {
-        width: 100%;
-        padding: 0;
-    }
-
-    #gridContact {
-        display: grid;
-        margin-left: 8%;
-        margin-right: 8%;
-        grid-template-columns: 10rem auto 3rem;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "header header navuser"
-            "nav content content"
-            "footer footer footer";
-    }
-
-    #gridChallengesMet {
-        display: grid;
-        margin-left: 8%;
-        margin-right: 8%;
-        grid-template-columns: 10rem auto 3rem;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "header header navuser"
-            "nav content content"
-            "footer footer footer";
-    }
-
-    #gridNextChallenge {
-        display: grid;
-        margin-left: 8%;
-        margin-right: 8%;
-        grid-template-columns: 10rem auto 3rem;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "header header navuser"
-            "nav content content"
-            "footer footer footer";
-    }
-
-    #gridTeamChallenges {
-        display: grid;
-        margin-left: 8%;
-        margin-right: 8%;
-        grid-template-columns: 10rem auto 3rem;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "header header navuser"
-            "nav content content"
-            "footer footer footer";
-    }
-
-    .card__h1 {
-        font-size: 2rem;
-    }
 
     .button {
         width: auto;
