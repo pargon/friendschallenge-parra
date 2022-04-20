@@ -28,6 +28,12 @@ h6 {
     font-family: "Roboto", sans-serif;
 }
 
+.bg-light {
+    --bs-bg-opacity: none;
+    background-color: none;
+}
+
+
 /* 
  ------- Header --------
   */
@@ -69,44 +75,23 @@ header .fixed-top {
     padding: 0;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: #222222;
+}
+
 .navbar ul {
     margin: 0;
     padding: 0;
-    display: flex;
     list-style: none;
-    align-items: center;
-}
-
-.navbar li {
-    position: relative;
-}
-
-.navbar>ul>li {
-    white-space: nowrap;
-    padding: 10px 0 10px 28px;
 }
 
 .navbar a,
 .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 3px;
     font-size: 15px;
     font-weight: 600;
     color: #222222;
-    white-space: nowrap;
-    transition: 0.3s;
-    position: relative;
 }
-
-.navbar a i,
-.navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-}
-
 
 .navbar>ul>li>a:before {
     content: "";
@@ -128,22 +113,7 @@ header .fixed-top {
     width: 100%;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-    color: #106eea;
-}
-
-@media (max-width: 991px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    .navbar ul {
-        display: none;
-    }
-}
+@media screen and (min-width: 400px) {}
 
 /* 
  ------- Welcome --------
@@ -253,95 +223,60 @@ header .fixed-top {
 /* 
  ------- Contact --------
   */
-.contact .info-box {
-    color: #444444;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(214, 215, 216, 0.3);
-    padding: 20px 0 30px 0;
-  }
-  .contact .info-box i {
-    font-size: 32px;
-    color: #106eea;
-    border-radius: 50%;
-    padding: 8px;
-    border: 2px dotted #b3d1fa;
-  }
-  .contact .info-box h3 {
-    font-size: 20px;
-    color: #777777;
-    font-weight: 700;
-    margin: 10px 0;
-  }
-  .contact .info-box p {
-    padding: 0;
-    line-height: 24px;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  .contact .email-form {
+.contact .email-form {
     box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
     padding: 30px;
-  }
-  .contact .email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-  }
-  .contact .email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-  }
-  .contact .email-form .form-group {
+}
+
+.contact .email-form .form-group {
     margin-bottom: 20px;
-  }
-  .contact .email-form input, .contact .email-form textarea {
+}
+
+.contact .email-form input,
+.contact .email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
-  }
-  .contact .email-form input:focus, .contact .email-form textarea:focus {
+}
+
+.contact .email-form input:focus,
+.contact .email-form textarea:focus {
     border-color: #106eea;
-  }
-  .contact .email-form input {
+}
+
+.contact .email-form input {
     padding: 10px 15px;
-  }
-  .contact .email-form textarea {
+}
+
+.contact .email-form textarea {
     padding: 12px 15px;
-  }
-  .contact .email-form button[type=submit] {
+}
+
+.contact .email-form button[type=submit] {
     background: #106eea;
     border: 0;
     padding: 10px 30px;
     color: #fff;
     transition: 0.4s;
     border-radius: 4px;
-  }
-  .contact .email-form button[type=submit]:hover {
+}
+
+.contact .email-form button[type=submit]:hover {
     background: #3b8af2;
-  }
+}
+
 /* 
 -----------  Main -------------
 */
-main section {
-    padding: 60px 0;
-    overflow: hidden;
-}
-
-.contheader {
-    grid-area: header;
-}
-
 main {
     grid-area: content;
     color: #FFFFFF;
     height: auto;
+}
+
+main section {
+    padding: 60px 0;
+    overflow: hidden;
 }
 
 /* 
