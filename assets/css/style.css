@@ -153,6 +153,13 @@ header .fixed-top {
 }
 
 /* 
+------- Welcome Description --------
+ */
+.section-title {
+    margin-top: 2rem;
+}
+
+/* 
  ------- Featured --------
   */
 .featured-services .icon-box {
