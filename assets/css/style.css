@@ -113,14 +113,12 @@ header .fixed-top {
     width: 100%;
 }
 
-@media screen and (min-width: 400px) {}
-
 /* 
  ------- Welcome --------
   */
 .welcome {
     width: 100%;
-    height: 75vh;
+    height: 30rem;
     background: url("../img/index_bg.png") top left;
     background-size: cover;
     position: relative;
@@ -153,10 +151,24 @@ header .fixed-top {
 }
 
 /* 
-------- Welcome Description --------
+------- Welcome Next --------
  */
-.section-title {
-    margin-top: 2rem;
+.welcome__next {
+    height: 42rem;
+}
+
+@media screen and (min-width: 372px) {
+
+    .welcome__next {
+        height: 35rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .welcome__next {
+        height: 30rem;
+    }
 }
 
 /* 
@@ -313,13 +325,12 @@ footer {
 
 #gridChallengesMet {
     display: grid;
-    grid-template-columns: auto 3rem;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-        "header navuser"
-        "content content"
-        "nav nav"
-        "footer footer";
+        "header"
+        "content"
+        "footer";
 }
 
 #gridNextChallenge {
@@ -327,10 +338,9 @@ footer {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-        "header navuser"
-        "content content"
-        "nav nav"
-        "footer footer";
+        "header"
+        "content"
+        "footer";
 }
 
 #gridContact {
@@ -345,32 +355,10 @@ footer {
 
 #gridTeamChallenges {
     display: grid;
-    grid-template-columns: auto 3rem;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-        "header navuser"
-        "content content"
-        "nav nav"
-        "footer footer";
-}
-
-.button {
-    border: none;
-    color: grey;
-    padding: 0.1rem 2.2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    width: 100%;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-@media screen and (min-width: 400px) {
-
-    .button {
-        width: auto;
-    }
+        "header"
+        "content"
+        "footer";
 }
