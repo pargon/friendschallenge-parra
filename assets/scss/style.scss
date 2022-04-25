@@ -1,0 +1,416 @@
+@import "colors";
+@import "typography";
+
+/* 
+ ------- General --------
+  */
+* {
+	font-family: $general-font-family;
+	color: $general-font-color;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: $a-font-color;
+	text-decoration: none;
+
+	&:hover {
+		color: $a-hover-font-color;
+		text-decoration: none;
+	}
+}
+
+h1 {
+	font-family: $h1-font-family;
+}
+
+h2 {
+	font-family: $h1-font-family;
+}
+
+h3 {
+	font-family: $h1-font-family;
+}
+
+h4 {
+	font-family: $h1-font-family;
+}
+
+h5 {
+	font-family: $h1-font-family;
+}
+
+h6 {
+	font-family: $h1-font-family;
+}
+
+.bg-light {
+	--bs-bg-opacity: none;
+	background-color: $bg-color-white !important;
+}
+
+/* 
+ ------- Header --------
+  */
+header {
+	grid-area: header;
+	transition: all 0.5s;
+	box-shadow: $header-box-shadow;
+}
+
+/* 
+ ------- Navigation --------
+*/
+.navbar {
+	padding: 1rem 0 1rem 0;
+	min-height: 1rem;
+	width: 100%;
+
+	.logo {
+		font-size: 1.3rem;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		font-family: $logo-font-family;
+
+		a {
+			color: $a-logo-font-color;
+
+			span {
+				color: $a-span-font-color;
+			}
+		}
+	}
+
+	.fixed-top {
+		height: 5rem;
+	}
+
+	ul {
+		margin: 0 0 1rem 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: 1rem 0 0 0;
+
+		&:hover {
+			>a {
+				&:before {
+					visibility: visible;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	a {
+		padding: 0 3px;
+		font-size: 15px;
+		font-weight: 600;
+		color:$a-logo-font-color;
+
+		&:focus {
+			padding: 0 3px;
+			font-size: 15px;
+			font-weight: 600;
+			color: $a-logo-font-color;
+		}
+
+		&:hover {
+			&:before {
+				visibility: visible;
+				width: 100%;
+			}
+		}
+	}
+
+	>ul {
+		>li {
+			>a {
+				&:before {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					bottom: -6px;
+					left: 0;
+					background-color: $bg-color-blue;
+					visibility: hidden;
+					width: 0px;
+					transition: all 0.3s ease-in-out 0s;
+				}
+			}
+		}
+	}
+
+	.active {
+		&:before {
+			visibility: visible;
+			width: 100%;
+		}
+	}
+}
+
+.navbar-collapse {
+	justify-content: end;
+}
+
+.navbar-light {
+	.navbar-nav {
+		.nav-link {
+			color: $a-logo-font-color;
+		}
+	}
+}
+
+/* 
+ ------- Welcome --------
+  */
+.welcome {
+	width: 100%;
+	height: 30rem;
+	background: url("../img/index_bg.png") top left;
+	background-size: cover;
+	position: relative;
+
+	&:before {
+		content: "";
+		background: $welcome-bg-color;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 3rem;
+		font-weight: 700;
+		color: $a-logo-font-color;
+		font-family: $welcome-h1-font-family;
+
+		span {
+			color: $a-span-font-color;
+		}
+	}
+}
+
+/* 
+------- Welcome Next --------
+ */
+.welcome__next {
+	height: 42rem;
+}
+
+@media screen and (min-width: 372px) {
+	.welcome__next {
+		height: 35rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.welcome__next {
+		height: 30rem;
+	}
+}
+
+/* 
+ ------- Featured --------
+  */
+.featured-services {
+	.icon-box {
+		padding: 30px;
+		position: relative;
+		overflow: hidden;
+		background: $bg-color-iconbox;
+		box-shadow: $featured-box-shadow;
+		transition: all 0.3s ease-in-out;
+		border-radius: 8px;
+		z-index: 1;
+
+		&::before {
+			content: "";
+			position: absolute;
+			background: $bg-color-iconbox-before;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			top: 100%;
+			transition: all 0.3s;
+			z-index: -1;
+		}
+
+		&:hover {
+			&::before {
+				background: $bg-color-blue;
+				top: 0;
+				border-radius: 0px;
+			}
+
+			.title {
+				a {
+					color: $bg-color-iconbox;
+				}
+			}
+
+			.description {
+				color: $bg-color-iconbox;
+			}
+
+			.icon {
+				i {
+					color: $bg-color-iconbox;
+				}
+			}
+		}
+	}
+
+	.icon {
+		margin-bottom: 15px;
+
+		i {
+			font-size: 48px;
+			line-height: 1;
+			color: $a-font-color;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	.title {
+		font-weight: 700;
+		margin-bottom: 15px;
+		font-size: 18px;
+
+		a {
+			color: $title-a-font-color;
+		}
+	}
+
+	.description {
+		font-size: 15px;
+		line-height: 28px;
+		margin-bottom: 0;
+	}
+}
+
+/* 
+ ------- Contact --------
+  */
+.contact {
+	.email-form {
+		box-shadow: $contact-box-shadow;
+		padding: 30px;
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		input {
+			border-radius: 0;
+			box-shadow: none;
+			font-size: 14px;
+			padding: 10px 15px;
+
+			&:focus {
+				border-color: $a-font-color;
+			}
+		}
+
+		textarea {
+			border-radius: 0;
+			box-shadow: none;
+			font-size: 14px;
+			padding: 12px 15px;
+
+			&:focus {
+				border-color: $a-font-color;
+			}
+		}
+
+		button[type=submit] {
+			background: $a-font-color;
+			border: 0;
+			padding: 10px 30px;
+			color: #fff;
+			transition: 0.4s;
+			border-radius: 4px;
+
+			&:hover {
+				background: $a-hover-font-color;
+			}
+		}
+	}
+}
+
+/* 
+-----------  Main -------------
+*/
+main {
+	grid-area: content;
+	color: $bg-color-white;
+	height: auto;
+
+	section {
+		padding: 60px 0;
+		overflow: hidden;
+	}
+}
+
+/* 
+-----------  Footer -------------
+*/
+footer {
+	grid-area: footer;
+	background: $bg-footer-color;
+	height: auto;
+	padding: 7rem 0 2rem 0;
+}
+
+/* 
+-----------  Grids -------------
+*/
+#gridIndex {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header""content""footer";
+}
+
+#gridChallengesMet {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header""content""footer";
+}
+
+#gridNextChallenge {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header""content""footer";
+}
+
+#gridContact {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header""content""footer";
+}
+
+#gridTeamChallenges {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header""content""footer";
+}
