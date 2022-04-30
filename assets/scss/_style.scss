@@ -1,6 +1,3 @@
-@import "colors";
-@import "typography";
-
 /* 
  ------- General --------
   */
@@ -57,23 +54,42 @@ h6 {
 header {
 	grid-area: header;
 	transition: all 0.5s;
-	box-shadow: $header-box-shadow;
+	box-shadow: map-get($map: $box_shadow, $key: "header");
 }
 
 /* 
  ------- Navigation --------
 */
+
 .navbar {
 	padding: 1rem 0 1rem 0;
 	min-height: 1rem;
 	width: 100%;
 
+	a {
+		padding: 0 3px;
+		@include font_wei(15px, 600);
+		color: $a-logo-font-color;
+
+		&:focus {
+			padding: 0 3px;
+			@include font_wei(15px, 600);
+			color: $a-logo-font-color;
+		}
+
+		&:hover {
+			&:before {
+				visibility: visible;
+				width: 100%;
+			}
+		}
+	}
+
 	.logo {
-		font-size: 1.3rem;
+		@include font_wei(1.3rem, 600);
 		margin: 0;
 		padding: 0;
 		line-height: 1;
-		font-weight: 600;
 		letter-spacing: 0.1rem;
 		font-family: $logo-font-family;
 
@@ -108,53 +124,6 @@ header {
 			}
 		}
 	}
-
-	a {
-		padding: 0 3px;
-		font-size: 15px;
-		font-weight: 600;
-		color:$a-logo-font-color;
-
-		&:focus {
-			padding: 0 3px;
-			font-size: 15px;
-			font-weight: 600;
-			color: $a-logo-font-color;
-		}
-
-		&:hover {
-			&:before {
-				visibility: visible;
-				width: 100%;
-			}
-		}
-	}
-
-	>ul {
-		>li {
-			>a {
-				&:before {
-					content: "";
-					position: absolute;
-					width: 100%;
-					height: 2px;
-					bottom: -6px;
-					left: 0;
-					background-color: $bg-color-blue;
-					visibility: hidden;
-					width: 0px;
-					transition: all 0.3s ease-in-out 0s;
-				}
-			}
-		}
-	}
-
-	.active {
-		&:before {
-			visibility: visible;
-			width: 100%;
-		}
-	}
 }
 
 .navbar-collapse {
@@ -162,7 +131,7 @@ header {
 }
 
 .navbar-light {
-	.navbar-nav {
+	.navbar-cont {
 		.nav-link {
 			color: $a-logo-font-color;
 		}
@@ -195,8 +164,7 @@ header {
 
 	h1 {
 		margin: 0;
-		font-size: 3rem;
-		font-weight: 700;
+		@include font_wei(3rem, 700);
 		color: $a-logo-font-color;
 		font-family: $welcome-h1-font-family;
 
@@ -234,7 +202,7 @@ header {
 		position: relative;
 		overflow: hidden;
 		background: $bg-color-iconbox;
-		box-shadow: $featured-box-shadow;
+		box-shadow: map-get($map:$box_shadow, $key: "featured");
 		transition: all 0.3s ease-in-out;
 		border-radius: 8px;
 		z-index: 1;
@@ -288,9 +256,8 @@ header {
 	}
 
 	.title {
-		font-weight: 700;
+		@include font_wei(18px, 700);
 		margin-bottom: 15px;
-		font-size: 18px;
 
 		a {
 			color: $title-a-font-color;
@@ -309,7 +276,7 @@ header {
   */
 .contact {
 	.email-form {
-		box-shadow: $contact-box-shadow;
+		box-shadow: map-get($map:$box_shadow, $key: "contact");
 		padding: 30px;
 
 		.form-group {
@@ -380,37 +347,30 @@ footer {
 /* 
 -----------  Grids -------------
 */
-#gridIndex {
+.gridAll {
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto auto;
 	grid-template-areas: "header""content""footer";
+
+}
+
+#gridIndex {
+	@extend .gridAll;
 }
 
 #gridChallengesMet {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: "header""content""footer";
+	@extend .gridAll;
 }
 
 #gridNextChallenge {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: "header""content""footer";
+	@extend .gridAll;
 }
 
 #gridContact {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: "header""content""footer";
+	@extend .gridAll;
 }
 
 #gridTeamChallenges {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: "header""content""footer";
+	@extend .gridAll;
 }

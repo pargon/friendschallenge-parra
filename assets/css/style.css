@@ -52,12 +52,25 @@ header {
   padding: 1rem 0 1rem 0;
   min-height: 1rem;
   width: 100%; }
+  .navbar a {
+    padding: 0 3px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222; }
+    .navbar a:focus {
+      padding: 0 3px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #222222; }
+    .navbar a:hover:before {
+      visibility: visible;
+      width: 100%; }
   .navbar .logo {
     font-size: 1.3rem;
+    font-weight: 600;
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-weight: 600;
     letter-spacing: 0.1rem;
     font-family: "Roboto", sans-serif; }
     .navbar .logo a {
@@ -75,38 +88,11 @@ header {
     .navbar li:hover > a:before {
       visibility: visible;
       width: 100%; }
-  .navbar a {
-    padding: 0 3px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #222222; }
-    .navbar a:focus {
-      padding: 0 3px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #222222; }
-    .navbar a:hover:before {
-      visibility: visible;
-      width: 100%; }
-  .navbar > ul > li > a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #106eea;
-    visibility: hidden;
-    width: 0px;
-    transition: all 0.3s ease-in-out 0s; }
-  .navbar .active:before {
-    visibility: visible;
-    width: 100%; }
 
 .navbar-collapse {
   justify-content: end; }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-cont .nav-link {
   color: #222222; }
 
 /* 
@@ -193,9 +179,9 @@ header {
     transition: all 0.3s ease-in-out; }
 
 .featured-services .title {
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px; }
+  margin-bottom: 15px; }
   .featured-services .title a {
     color: #111; }
 
@@ -259,31 +245,7 @@ footer {
 /* 
 -----------  Grids -------------
 */
-#gridIndex {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "header" "content" "footer"; }
-
-#gridChallengesMet {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "header" "content" "footer"; }
-
-#gridNextChallenge {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "header" "content" "footer"; }
-
-#gridContact {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "header" "content" "footer"; }
-
-#gridTeamChallenges {
+.gridAll, #gridIndex, #gridChallengesMet, #gridNextChallenge, #gridContact, #gridTeamChallenges {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto auto;
