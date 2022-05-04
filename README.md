@@ -1,15 +1,15 @@
-## Friend Challenge
+# Friend Challenge
 
-# Install nodemon node-sass
+## Install nodemon node-sass
 
 `npm i -D node-sass nodemon`
 
-# Install dependencies
+## Install dependencies
 
 `cd assets
 npm install`
 
-# Compile SCSS
+## Compile SCSS
 
 `npm run watch-css`
 
