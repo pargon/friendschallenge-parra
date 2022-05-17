@@ -1,4 +1,4 @@
-# Friend Challenge
+# Friends Challenge
 
 ## Install nodemon node-sass
 
